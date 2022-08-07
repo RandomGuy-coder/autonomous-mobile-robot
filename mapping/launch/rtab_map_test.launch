@@ -29,13 +29,17 @@
   	      <remap from="grid_map" to="/map"/>
 
           <param name="RGBD/ProximityBySpace"     type="string" value="true"/>
-          <!-- Update only if robot is moving -->
           <param name="RGBD/AngularUpdate"        type="string" value="0.1"/>
           <param name="RGBD/LinearUpdate"         type="string" value="0.1"/>
           <param name="RGBD/OptimizeFromGraphEnd" type="string" value="false"/>
+          <param name="RGBD/OptimizeMaxError"     type="double" value="0.1"/>
+          <param name="Kp/MaxFeatures" type="string" value="-1"/>
           <param name="Reg/Force3DoF"             type="string" value="true"/>
-          <param name="Vis/MinInliers"            type="string" value="12"/>
+          <param name="Vis/MinInliers"            type="string" value="15"/>
     </node>
   </group>
 
+  <node pkg="explore_lite" type="explore" respawn="true" name="explore" output="screen">
+    <rosparam file="$(find mapping)/config/exploration.yaml" command="load" />
+  </node>
 </launch>
