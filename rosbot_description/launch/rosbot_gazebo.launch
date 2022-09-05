@@ -10,8 +10,13 @@
   <arg name="y" default="0"/>
   <arg name="z" default="0.229793"/>
 
-  <node name="rosbot_spawn" pkg="gazebo_ros" type="spawn_model" output="screen" args="-urdf -param robot_description -model rosbot -x $(arg x) -y $(arg y) -z $(arg z)" />
+  <node name="rosbot_spawn" pkg="gazebo_ros" type="spawn_model" output="screen" args="-urdf -param robot_description -model rosbot -x $(arg x) -y $(arg y) -z $(arg z) -Y 3.14" />
 
-  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+  <rosparam file="$(find rosbot_description)/config/config.yaml" command="load" />
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" ns="/rotate_model" args="joint_state_controller kinect_joint_controller --shutdown-timeout 3"/>
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
+    <remap from="/joint_states" to="/rotate_model/joint_states" />
+  </node>
 
 </launch>

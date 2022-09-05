@@ -1,0 +1,11 @@
+rotate_model:
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 20
+  
+  kinect_joint_controller:
+    type: effort_controllers/JointPositionController
+    joint: astra_joint
+    pid: {p: 1.0, i: 0.1, d: 2.0}
+
+
