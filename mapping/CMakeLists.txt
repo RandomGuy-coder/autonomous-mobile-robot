@@ -3,21 +3,21 @@ project(mapping)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 add_compile_options(-std=c++11)
-
-find_package(catkin REQUIRED COMPONENTS roscpp rospy std_msgs genmsg)
+find_package(Qt5 COMPONENTS Core REQUIRED)
+find_package(catkin REQUIRED COMPONENTS roscpp rospy std_msgs genmsg find_object_2d)
 
 catkin_package(
   CATKIN_DEPENDS
+  find_object_2d
 )
 
 
 include_directories(${catkin_INCLUDE_DIRS})
 
-add_executable(${PROJECT_NAME}_node src/rotatecamera.cpp)
+add_executable(rotate_camera src/rotatecamera.cpp)
 
+target_link_libraries(rotate_camera ${catkin_LIBRARIES})
 
-target_link_libraries(${PROJECT_NAME}_node
-  ${catkin_LIBRARIES}
-)
-
-
+add_executable(object_detect src/object_detection_follow.cpp)
+target_link_libraries(object_detect ${catkin_LIBRARIES})
+target_link_libraries(object_detect Qt5::Core)
