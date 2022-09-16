@@ -2,7 +2,7 @@
 #include "std_msgs/Float64.h"
 
 int main(int argc, char **argv) {
-    ros::init(argc, argv, "talker");
+    ros::init(argc, argv, "rotatecamera");
 
     ros::NodeHandle n;
 

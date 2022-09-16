@@ -18,6 +18,6 @@ add_executable(rotate_camera src/rotatecamera.cpp)
 
 target_link_libraries(rotate_camera ${catkin_LIBRARIES})
 
-add_executable(object_detect src/object_detection_follow.cpp)
+add_executable(object_detect src/object_recognition.cpp)
 target_link_libraries(object_detect ${catkin_LIBRARIES})
 target_link_libraries(object_detect Qt5::Core)

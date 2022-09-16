@@ -1,0 +1,26 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/planearcher/Documents/ros_workspace/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/planearcher/Documents/ros_workspace/src/vision_opencv/cv_bridge/include/**",
+        "/home/planearcher/Documents/ros_workspace/src/find_object_2d/include/**",
+        "/home/planearcher/Documents/ros_workspace/src/vision_opencv/image_geometry/include/**",
+        "/home/planearcher/Documents/ros_workspace/src/navigation_layers/range_sensor_layer/include/**",
+        "/home/planearcher/Documents/ros_workspace/src/navigation_layers/social_navigation_layers/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}
