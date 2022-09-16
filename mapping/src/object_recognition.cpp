@@ -57,7 +57,12 @@ class ObjectFollow {
                     goal.target_pose.pose.position.y = pose.getOrigin().y();
                     goal.target_pose.pose.orientation.w = 1.0;
                     ac->sendGoal(goal);
-                    objectGoalSent = true;
+
+                    ac->waitForResult();
+                    if(ac->getState() == actionlib::SimpleClientGoalState::SUCCEEDED) {
+                        objectGoalSent = true;
+                        std::cout << "Successfully found object" << std::endl;
+                    }
                 
 
             } catch(tf::TransformException & ex) {

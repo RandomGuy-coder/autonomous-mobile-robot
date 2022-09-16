@@ -5,13 +5,14 @@
 	<arg name="approx_sync"   default="true"/>
 	<arg name="pnp"           default="true"/>
 	<arg name="tf"    		  default="true"/>
-	
+	<arg name="settings_path" default="$(find mapping)/find_object_2d.ini"/>
 	<arg name="rgb_topic"         default="camera/rgb/image_raw"/>
 	<arg name="depth_topic"       default="camera/depth/image_raw"/>
 	<arg name="camera_info_topic" default="camera/rgb/camera_info"/>
 	
 	<node name="find_object_3d" pkg="find_object_2d" type="find_object_2d" output="screen">
 		<param name="gui" value="$(arg gui)" type="bool"/>
+		<param name="settings_path" value="$(arg settings_path)" type="str"/>
 		<param name="subscribe_depth" value="true" type="bool"/>
 		<param name="objects_path" value="$(arg objects_path)" type="str"/>
 		<param name="approx_sync" value="$(arg approx_sync)" type="bool"/>

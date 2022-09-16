@@ -33,7 +33,7 @@
           <param name="RGBD/LinearUpdate"         type="string" value="0.1"/>
           <param name="RGBD/OptimizeFromGraphEnd" type="string" value="false"/>
           <param name="RGBD/OptimizeMaxError"     type="double" value="0.1"/>
-          <param name="Kp/MaxFeatures" type="string" value="-1"/>
+          
           <param name="Grid/RangeMax" type="string" value="3"/>
           <param name="Grid/3D" type="string" value="false"/>
           <param name="GridGlobal/MinSize"           type="string" value="20"/>
