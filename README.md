@@ -1,6 +1,6 @@
 # autonomous-mobile-robot
 
-##Introduction
+## Introduction
 This project was done for my Masters disseration. The project aims to use ROS (Robot Operating System) for path finding in an unknown environment using low cost sensors such as kinect. The development and tests are done in a simulated world using Gazebo. The project compares different available path-finding and SLAM packages avaialble in ROS and their performace in different lightining scenario.  
 
 This project was developed in ROS Noetic, therefore hasn't been tested for other ROS versions.
