@@ -17,6 +17,7 @@ roslaunch mapping gazebo_robot_world.launch world:= <pass the world to run>
 ```
 
 Step 2:
+
 The project is configured to look for a Coke can model. This model can be found in the Gazebo Models.
 Add the coke can in the scene, can be found in gazebo models.
 
